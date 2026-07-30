@@ -8,6 +8,10 @@ provenance:
 
 # Native JIT BnB W8 split
 
+> **Historical implementation plan.** This records the stacked change at its
+> original review point; current ownership lives in
+> [`../architecture/REPOSITORY_LAYOUT.md`](../architecture/REPOSITORY_LAYOUT.md).
+
 Status: fourth stacked structural change; local and RTX 4080 regression gates
 pass.
 

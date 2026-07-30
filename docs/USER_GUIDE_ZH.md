@@ -310,7 +310,7 @@ print(tokenizer.decode(new_tokens, skip_special_tokens=True))
 因果语言模型接口使用可检查的 Transformers 风格参数名，包括 `input_ids`、
 `attention_mask`、`inputs_embeds`、`past_key_values`、`labels`、`use_cache`、
 `output_hidden_states`、`return_dict`、`logits_to_keep`、`position_ids` 和
-`cache_position`。优化的 FLA 包装器仍保留 `**kwargs`，以兼容不同 Transformers
+`cache_position`。可选的 FLA reference 包装器仍保留 `**kwargs`，以兼容不同 Transformers
 版本新增的参数。新代码应使用 `logits_to_keep`；已弃用的
 `num_logits_to_keep` 仍作为兼容别名保留。
 

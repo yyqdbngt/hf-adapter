@@ -8,6 +8,10 @@ provenance:
 
 # Native JIT dense TorchScript step split
 
+> **Historical implementation plan.** This records the stacked change at its
+> original review point; current ownership lives in
+> [`../architecture/REPOSITORY_LAYOUT.md`](../architecture/REPOSITORY_LAYOUT.md).
+
 Status: fifth stacked structural change.
 
 ## Scope

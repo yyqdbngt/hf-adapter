@@ -254,13 +254,13 @@ you trust.
 The causal-LM API uses inspectable Transformers-style argument names such as
 `input_ids`, `attention_mask`, `inputs_embeds`, `past_key_values`, `labels`,
 `use_cache`, `output_hidden_states`, `return_dict`, `logits_to_keep`,
-`position_ids`, and `cache_position`. The optimized FLA-backed wrapper also
+`position_ids`, and `cache_position`. The optional FLA reference wrapper also
 keeps `**kwargs` for version-specific Transformers arguments. Use
 `logits_to_keep`; the deprecated `num_logits_to_keep` spelling remains a
 compatibility alias.
 
 RWKV checkpoints and kernels historically use `num_heads`, while Transformers
-tools commonly inspect `num_attention_heads`. Both native and FLA-backed
+tools commonly inspect `num_attention_heads`. Both native and FLA-reference
 configs accept either spelling and expose both attributes with the same value:
 
 ```python

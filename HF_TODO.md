@@ -116,10 +116,6 @@ row is never a full-FLA reference.
 
 - [ ] H100/Hopper: bf16, large-model, quant, batch, cache, training, and
       same-card performance rows.
-- [x] AMD gfx1100/ROCm 7.2.1: fully native HF load/generate, PEFT, recurrent
-      cache/chunked prefill, bf16 Trainer and B1/B2/B4/B8 baseline on a real GPU.
-- [x] AMD gfx1100: exact-architecture fused decode and output-head MM8/MM4
-      B1/B2/B4/B8 speed/quality rows through 13.3B; all 40 quant cells pass.
 - [ ] AMD/ROCm: fused prefill, full-model fused W8/W4, MI-series, longer
       training and same-card official/Albatross performance.
 - [ ] Other Turing/RTX 20 products: validate independently and do not inherit

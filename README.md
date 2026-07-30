@@ -92,10 +92,10 @@ save/reload.
 | Serving references | runtime-independent vLLM/SGLang implementation contracts |
 
 The public model surface follows Transformers naming without renaming RWKV
-checkpoint or kernel internals. Both native and FLA-backed configs accept
-`num_heads` or `num_attention_heads`, expose the same value through both
-attributes, serialize both fields, and reject conflicting values. The
-FLA-backed causal-LM wrapper exposes named `forward` parameters for signature
+checkpoint or kernel internals. Both native and optional FLA-reference configs
+accept `num_heads` or `num_attention_heads`, expose the same value through both
+attributes, serialize both fields, and reject conflicting values. The optional
+FLA reference wrapper exposes named `forward` parameters for signature
 inspection; extra version-specific arguments remain accepted through
 `**kwargs`. See the [English](docs/USER_GUIDE.md#public-argument-and-config-names)
 or [Chinese](docs/USER_GUIDE_ZH.md#公开参数与配置命名) user guide for the
