@@ -81,6 +81,7 @@ save/reload.
 | Area | Public path |
 |---|---|
 | Config/model/tokenizer | `AutoConfig`, `AutoModelForCausalLM`, `AutoTokenizer` |
+| Public naming | explicit causal-LM `forward` parameters; `num_heads` / `num_attention_heads` config aliases |
 | Generation | greedy, sampling, beam-compatible cache operations, `generate()` |
 | Recurrent cache | select, reorder, repeat, reset, offload/restore helpers |
 | Training | PEFT LoRA, Trainer, TRL SFT/DPO/GRPO, gradient checkpointing |
@@ -89,6 +90,16 @@ save/reload.
 | Quantization | BnB fallback, native MM8/MM4, A8W8, TorchAO, Marlin, MLX |
 | Hardware | CUDA capability policies, CPU fallback, Apple MPS/MLX/CoreML |
 | Serving references | runtime-independent vLLM/SGLang implementation contracts |
+
+The public model surface follows Transformers naming without renaming RWKV
+checkpoint or kernel internals. Both native and FLA-backed configs accept
+`num_heads` or `num_attention_heads`, expose the same value through both
+attributes, serialize both fields, and reject conflicting values. The
+FLA-backed causal-LM wrapper exposes named `forward` parameters for signature
+inspection; extra version-specific arguments remain accepted through
+`**kwargs`. See the [English](docs/USER_GUIDE.md#public-argument-and-config-names)
+or [Chinese](docs/USER_GUIDE_ZH.md#公开参数与配置命名) user guide for the
+compatibility rules.
 
 The repository does not contain a native vLLM or SGLang runtime. Their model,
 operator, state-cache, checkpoint, and quantization implementation references
